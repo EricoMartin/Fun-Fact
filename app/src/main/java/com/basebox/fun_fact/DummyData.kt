@@ -3,7 +3,7 @@ package com.basebox.fun_fact
 object DummyData {
     val facts  = listOf(FactModel("Kotlin", R.drawable.kotlin_logo,
         "The name comes from kotlin island near St. petersburg. Andrey Bransley" +
-                " mentioned taht the team decided to name"),
+                " mentioned that the team decided to name"),
         FactModel("Java", R.drawable.ic_java_logo,
             "The language was initially called Oak after an Oak tree that stood outside Gostling's Office. Later the project was renamed to Java."),
         FactModel("Python", R.drawable.python_logo,

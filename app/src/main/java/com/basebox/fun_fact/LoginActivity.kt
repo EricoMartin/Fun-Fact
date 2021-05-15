@@ -3,9 +3,19 @@ package com.basebox.fun_fact
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.view.View
+import android.widget.ImageView
+import android.widget.TextView
 import com.basebox.fun_fact.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
+
+    private val TAG = "LoginActivity"
+
+    private var emailUsed: String? = null
+    private var passwordUsed: String? = null
+
     private var binding: ActivityLoginBinding? = null
     private var email:String?  = null
     private var password:String? = null
@@ -19,12 +29,13 @@ class LoginActivity : AppCompatActivity() {
         email = "martinirex@yahoo.co.uk"
         password = "adminpassword"
 
-        setUpLogin(email!!, password!!)
-    }
 
-    private fun setUpLogin(email: String, password: String) {
-        if (email == "martinirex@yahoo.co.uk" && password == "adminpassword"){
-            binding?.btnLogin?.setOnClickListener {
+
+        binding?.btnLogin?.setOnClickListener {
+            emailUsed = binding?.email?.editText?.text.toString()
+            passwordUsed = binding?.password?.editText?.text.toString()
+            Log.d(TAG, "Values of userEmail $emailUsed and userPassword $passwordUsed")
+            if (emailUsed == email && passwordUsed == password){
                 val intent = Intent(this, MainActivity::class.java)
 
                 startActivity(intent)
@@ -32,4 +43,9 @@ class LoginActivity : AppCompatActivity() {
             }
         }
     }
+
+//    private fun setUpLogin(email: String, password: String) {
+//
+//
+//    }
 }
